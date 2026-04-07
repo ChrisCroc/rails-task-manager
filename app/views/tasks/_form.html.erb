@@ -1,0 +1,21 @@
+<%= form_with model: task do |f| %>
+  <div class="d-flex align-items-start">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+  <br>
+  <% if action_name == "edit" %>
+    <div>
+      <%= f.label :completed, "Mark as done" %>
+      <%= f.check_box :completed %>
+    </div>
+  <% end %>
+  <div class="btn btn-success">
+    <%= f.submit "Edit this task" %>
+  </div>
+  <% end %>
